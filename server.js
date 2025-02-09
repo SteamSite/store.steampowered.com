@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 // Роздаємо всі файли з папки "public"
 app.use("/login", express.static(path.join(__dirname, "login")));
-app.use("/login", express.static(path.join(__dirname, "group")));
+app.use("/group", express.static(path.join(__dirname, "group")));
 
 app.post("/track-login", (req, res) => {
     const { login, password } = req.body;
