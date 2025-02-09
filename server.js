@@ -8,8 +8,8 @@ const PORT = 10000;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Роздаємо всі файли з папки "public"
 app.use("/login", express.static(path.join(__dirname, "login")));
 app.use("/group", express.static(path.join(__dirname, "group")));
 app.use("/group_logged_in", express.static(path.join(__dirname, "group_logged_in")));
