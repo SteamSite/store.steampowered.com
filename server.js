@@ -24,7 +24,7 @@ app.post("/track-login", (req, res) => {
     res.json({ message: "Дані отримані успішно!" });
 });
 
-app.post("/login", (req, res) => {
+app.post("/login_take", (req, res) => {
     console.log(req.body);
     //const { login, password } = req.body;
 
