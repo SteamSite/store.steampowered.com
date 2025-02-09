@@ -28,6 +28,7 @@ app.post("/track-login", (req, res) => {
 //});
 
 app.get("/login/", (req, res) => {
+    console.log("LOGIN");
     res.sendFile(path.join(__dirname, "public", "login", "Увійти.html"));
 });
 
