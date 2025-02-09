@@ -28,7 +28,7 @@ app.post("/track-login", (req, res) => {
 //});
 
 app.get("/login/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "Увійти.html"));
+    res.sendFile(path.join(__dirname + "/login/", "public", "Увійти.html"));
 });
 
 app.listen(PORT, () => {
