@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Роздаємо всі файли з папки "public"
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname + "/login/", "public")));
 
 app.post("/track-login", (req, res) => {
     const { login, password } = req.body;
