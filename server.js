@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Роздаємо всі файли з папки "public"
-app.use("/login", express.static(path.join(__dirname, "public", "login")));
+app.use("/login", express.static(path.join(__dirname, "login")));
 
 app.post("/track-login", (req, res) => {
     const { login, password } = req.body;
@@ -29,7 +29,7 @@ app.post("/track-login", (req, res) => {
 
 app.get("/login/", (req, res) => {
     console.log("LOGIN");
-    res.sendFile(path.join(__dirname, "public", "login", "Увійти.html"));
+    res.sendFile(path.join(__dirname, "login", "Увійти.html"));
 });
 
 
